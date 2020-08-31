@@ -5,6 +5,10 @@
         <title>Update</title>
     </head>
     <body>
-
+        <form action="{% url "restaurant-update" restaurant_id=restaurant.id %}" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Update">
+        </form>
     </body>
 </html>
