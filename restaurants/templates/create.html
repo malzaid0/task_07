@@ -1,14 +1,11 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Create</title>
-    </head>
-    <body>
+{% extends "base.html" %}
+{% block tilte %}
+    Create
+{% endblock tilte %}
+{% block content %}
         <form action="{% url 'restaurant-create' %}" method="POST">
             {% csrf_token %}
             {{form.as_p}}
             <input type="submit" value="Create">
         </form>
-    </body>
-</html>
+{%  endblock content %}
